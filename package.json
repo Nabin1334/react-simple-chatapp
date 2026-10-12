@@ -1,0 +1,27 @@
+{
+	"name": "kurakane",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"engines": {
+		"node": ">=22.13.0"
+	},
+	"scripts": {
+		"setup": "npm install && npm --prefix client install",
+		"build": "npm --prefix client run build",
+		"start": "npm run build && node index.js",
+		"server": "node index.js",
+		"dev": "node dev.js",
+		"test": "node --test auth.test.js && npm --prefix client test -- --watchAll=false --runInBand"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"express": "^4.17.1",
+		"nodemon": "^2.0.7",
+		"serve": "^11.3.2",
+		"socket.io": "^4.0.0"
+	}
+}

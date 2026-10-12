@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: kurakane
+    runtime: node
+    plan: starter
+    buildCommand: npm ci && npm ci --prefix client && npm run build
+    startCommand: npm run server
+    healthCheckPath: /health
+    disk:
+      name: kurakane-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: AUTH_DATABASE_PATH
+        value: /var/data/auth.sqlite
+      - key: TRUST_PROXY
+        value: "1"
