@@ -9,9 +9,9 @@ npm run setup
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) for the app. `npm run dev` starts the React development server and the API/signaling server together, reusing a healthy local API if one is already running. Leave the terminal open while using Kurakane; press **Ctrl+C** to stop the services started by that command. The API health check is at [http://localhost:5000/health](http://localhost:5000/health).
+Open [http://localhost:3000](http://localhost:5173) for the app. `npm run dev` starts the React development server and the API/signaling server together, reusing a healthy local API if one is already running. Leave the terminal open while using Kurakane; press **Ctrl+C** to stop the services started by that command. The API health check is at [http://localhost:5000/health](http://localhost:5173/health).
 
-Run `npm run setup` once after cloning the project, or again after changing dependencies. For a production-style local run, `npm start` builds the browser app and serves it from [http://localhost:5000](http://localhost:5000).
+Run `npm run setup` once after cloning the project, or again after changing dependencies. For a production-style local run, `npm start` builds the browser app and serves it from [http://localhost:5000](http://localhost:8000).
 
 If port 5000 is already in use, stop the other server or choose a free port. In PowerShell, for example:
 
@@ -55,7 +55,7 @@ In a second terminal, run the client development server:
 npm --prefix client start
 ```
 
-Open [http://localhost:3000](http://localhost:3000). The client connects to the local signaling server on port 5000. Sign in and out without enabling your camera or microphone. The browser requests device access only after you click **Start call** or **Answer**; grant permission then to join the call.
+Open [http://localhost:3000](http://localhost:5173). The client connects to the local signaling server on port 5000. Sign in and out without enabling your camera or microphone. The browser requests device access only after you click **Start call** or **Answer**; grant permission then to join the call.
 
 To call someone, sign in from another browser or device, copy their call ID, and paste it into the **Call ID** field. For another device on the same network, serve the app over HTTPS (camera access on other devices requires a secure context) and set `REACT_APP_SOCKET_URL` to the signaling server's reachable address before starting the client.
 
